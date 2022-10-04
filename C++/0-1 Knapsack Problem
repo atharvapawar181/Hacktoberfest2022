@@ -1,0 +1,43 @@
+/*
+Start the program
+   Input: set of items each with a weight and a value
+   Set knapsack capacity
+   Number of items=sizeof(values) / sizeof(values[0])
+   Knapsack(Values (stored in array v), Weights (stored in array w), Number of
+   distinct items (n), Knapsack capacity W)
+   If (w < 0)
+      Return
+   If no items left or capacity becomes 0
+      Return 0
+   Include current item n in knapSack (v[n]) and recurs for
+   remaining items (n - 1) with decreased capacity (W - w[n])
+   Exclude current item n from knapSack and recurs for
+   remaining items (n - 1)
+   Return maximum value we get by including or excluding current item
+End the program
+*/
+
+
+#include <iostream>
+#include <climits>
+using namespace std;
+
+int knapSack(int v[], int w[], int n, int W) {
+   if (W < 0)
+      return INT_MIN;
+   if (n < 0 || W == 0)
+      return 0;
+   int in = v[n] + knapSack(v, w, n - 1, W - w[n]);
+   int ex = knapSack(v, w, n - 1, W);
+   return max (in, ex);
+}
+
+int main() 
+{
+   int v[] = { 10, 20, 30, 40, 60, 70 };
+   int w[] = { 1, 2, 3, 6, 7, 4 };
+   int W = 7;
+   int n = sizeof(v) / sizeof(v[0]);
+   cout << "Knapsack value is " << knapSack(v, w, n - 1, W);
+   return 0;
+}
