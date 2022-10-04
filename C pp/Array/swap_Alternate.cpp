@@ -10,6 +10,15 @@ void printArray(int arr[], int n) {
     cout<<endl;
 }
 
+void swapAlternate(int arr[], int size) {
+
+    for(int i = 0; i<size; i+=2 ) {    //i+=2 is used as, aletrnate element is to be swaped
+        if(i+1 < size) {
+            swap(arr[i], arr[i+1]);
+        }
+    }
+
+}
 
 int main(){
 
