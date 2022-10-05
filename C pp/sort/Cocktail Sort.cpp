@@ -53,12 +53,7 @@ if (a[i] > a[i + 1]) {
 }
 
 /* Prints the array */
-void printArray(int a[], int n)
-{
-for (int i = 0; i < n; i++)
-printf("%d ", a[i]);
-printf("\n");
-}
+
 
 // Driver code
 int main()
