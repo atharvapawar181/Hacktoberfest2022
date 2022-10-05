@@ -35,7 +35,19 @@ swapped = false;
 // move the end point back by one, because
 // item at the end is in its rightful spot
 --end;
+for (int i = end - 1; i >= start; --i) {
+if (a[i] > a[i + 1]) {
+	swap(a[i], a[i + 1]);
+	swapped = true;
+}
+}
 
+// increase the starting point, because
+// the last stage would have moved the next
+// smallest number to its rightful spot.
+++start;
+}
+}
 // from right to left, doing the
 // same comparison as in the previous stage
 
