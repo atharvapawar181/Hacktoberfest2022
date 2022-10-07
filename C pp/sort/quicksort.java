@@ -1,4 +1,4 @@
-public class quick_sort {
+public class quicksort {
     public static void main(String[] args){
         int[] baseArray = { 20, 23, 54, 9, 18, 78 };
     
