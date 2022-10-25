@@ -1,13 +1,6 @@
 #include <iostream>
 using namespace std;
  
-void swap(int *a, int *b)
-{
-   int temp = *a;
-   *a = *b;
-   *b = temp;
-}
- 
 void bubbleSort(int arr[], int n)
 {
    for (int i = 0; i < n-1; i++)
@@ -18,7 +11,7 @@ void bubbleSort(int arr[], int n)
        {
            if (arr[j] > arr[j+1])
            {
-               swap(&arr[j], &arr[j+1]);
+               swap(arr[j], arr[j+1]);
                swapped = true;
            }
        }
@@ -37,9 +30,13 @@ void printArray(int arr[], int n)
  
 int main()
 {
-   int arr[] = {6, 3, 8, 9, 5};
-   int n = sizeof(arr)/sizeof(arr[0]);
-  
+  int n;
+ cin>>n;
+ int*arr=new int[n];
+  for(int i=0;i<n;i++)
+  {
+   cin>>arr[i];
+  }
    cout<<"Given Array: ";
    printArray(arr, n);
   
